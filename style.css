@@ -2176,3 +2176,33 @@ body::after {
         background: rgba(3, 5, 7, .96) !important;
     }
 }
+
+
+/* =========================================================
+   PROFILE STATS (replaces duplicate contact details)
+   ========================================================= */
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-stats strong {
+    display: block;
+    font-family: "Space Grotesk";
+    font-size: 22px;
+    color: #00e5ff;
+}
+
+.profile-stats span {
+    display: block;
+    margin-top: 5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #747c80;
+}
