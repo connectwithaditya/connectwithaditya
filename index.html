@@ -4,42 +4,26 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Aditya Sharma - SEO Executive Portfolio">
-
-    <meta name="keywords"
-          content="Aditya Sharma, SEO Executive, SEO, Digital Marketing, Technical SEO, On Page SEO, Off Page SEO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aditya Sharma - SEO Executive Portfolio">
+    <meta name="keywords" content="Aditya Sharma, SEO Executive, SEO, Digital Marketing, Technical SEO, On Page SEO, Off Page SEO">
 
     <title>Aditya Sharma | SEO Executive</title>
 
+    <!-- Favicon / Logo -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
 
     <!-- Google Fonts -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -51,10 +35,18 @@
      LOADING SCREEN
 ===================================== -->
 
-<div class="loader-box">
-    <img src="favicon.png" alt="Logo" class="loader-logo">
-    <p>ADITYA SHARMA</p>
-    <span>SEO EXECUTIVE</span>
+<div id="loader">
+
+    <div class="loader-box">
+
+        <img src="favicon.png" alt="Aditya Sharma Logo" class="loader-logo">
+
+        <p>ADITYA SHARMA</p>
+
+        <span>SEO EXECUTIVE</span>
+
+    </div>
+
 </div>
 
 
@@ -74,49 +66,30 @@
 <header class="navbar">
 
     <a href="#home" class="logo">
-    <img src="favicon.png" alt="Aditya Sharma Logo" class="logo-img">
-    <span>ADITYA</span>
-    <strong>SHARMA</strong>
-</a>
+
+        <img src="favicon.png" alt="Aditya Sharma Logo" class="logo-img">
+
+        <div class="logo-text">
+            <span>ADITYA</span>
+            <strong>SHARMA</strong>
+        </div>
+
+    </a>
 
 
     <nav id="nav-menu">
 
-        <a href="#home"
-           class="nav-link active">
-            Home
-        </a>
-
-        <a href="#about"
-           class="nav-link">
-            About
-        </a>
-
-        <a href="#skills"
-           class="nav-link">
-            Skills
-        </a>
-
-        <a href="#experience"
-           class="nav-link">
-            Experience
-        </a>
-
-        <a href="#education"
-           class="nav-link">
-            Education
-        </a>
-
-        <a href="#contact"
-           class="nav-link">
-            Contact
-        </a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
 
     </nav>
 
 
-    <a href="#contact"
-       class="nav-contact">
+    <a href="#contact" class="nav-contact">
 
         Let's Talk
         <i class="fa-solid fa-arrow-right"></i>
@@ -124,8 +97,7 @@
     </a>
 
 
-    <button id="menu-button"
-            class="menu-button">
+    <button id="menu-button" class="menu-button" aria-label="Open menu">
 
         <i class="fa-solid fa-bars"></i>
 
@@ -139,8 +111,7 @@
      HERO
 ===================================== -->
 
-<section id="home"
-         class="hero">
+<section id="home" class="hero">
 
 
     <div class="hero-content">
@@ -155,28 +126,22 @@
         </div>
 
 
-        <p class="hero-small">
-            HELLO, I'M
-        </p>
+        <p class="hero-small">HELLO, I'M</p>
 
 
         <h1>
 
             ADITYA
 
-            <span>
-                SHARMA
-            </span>
+            <span>SHARMA</span>
 
         </h1>
 
 
         <h2>
 
-            SEO Executive &
-            <span>
-                Digital Marketing
-            </span>
+            SEO Executive &amp;
+            <span>Digital Marketing</span>
             Professional
 
         </h2>
@@ -194,8 +159,7 @@
 
         <div class="hero-buttons">
 
-            <a href="#experience"
-               class="btn-primary">
+            <a href="#experience" class="btn-primary">
 
                 View Experience
 
@@ -204,8 +168,7 @@
             </a>
 
 
-            <a href="#contact"
-               class="btn-secondary">
+            <a href="#contact" class="btn-secondary">
 
                 Contact Me
 
@@ -216,7 +179,9 @@
 
         <div class="hero-social">
 
-            <a href="www.linkedin.com/in/aditya-sharma-connect"
+            <a href="https://www.linkedin.com/in/aditya-sharma-connect"
+               target="_blank"
+               rel="noopener"
                title="LinkedIn">
 
                 <i class="fa-brands fa-linkedin-in"></i>
@@ -224,8 +189,7 @@
             </a>
 
 
-            <a href="mailto:adityasharmaconnect@yahoo.com"
-               title="Email">
+            <a href="mailto:adityasharmaconnect@yahoo.com" title="Email">
 
                 <i class="fa-solid fa-envelope"></i>
 
@@ -261,13 +225,9 @@
 
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
 
-                <strong>
-                    SEO
-                </strong>
+                <strong>SEO</strong>
 
-                <span>
-                    EXECUTIVE
-                </span>
+                <span>EXECUTIVE</span>
 
             </div>
 
@@ -280,13 +240,9 @@
 
             <div>
 
-                <strong>
-                    Keyword Research
-                </strong>
+                <strong>Keyword Research</strong>
 
-                <small>
-                    Search Strategy
-                </small>
+                <small>Search Strategy</small>
 
             </div>
 
@@ -299,13 +255,9 @@
 
             <div>
 
-                <strong>
-                    Technical SEO
-                </strong>
+                <strong>Technical SEO</strong>
 
-                <small>
-                    Website Optimization
-                </small>
+                <small>Website Optimization</small>
 
             </div>
 
@@ -318,13 +270,9 @@
 
             <div>
 
-                <strong>
-                    Analytics
-                </strong>
+                <strong>Analytics</strong>
 
-                <small>
-                    Data Driven
-                </small>
+                <small>Data Driven</small>
 
             </div>
 
@@ -335,9 +283,7 @@
 
     <div class="scroll-down">
 
-        <span>
-            SCROLL TO EXPLORE
-        </span>
+        <span>SCROLL TO EXPLORE</span>
 
         <i class="fa-solid fa-chevron-down"></i>
 
@@ -351,8 +297,7 @@
      ABOUT
 ===================================== -->
 
-<section id="about"
-         class="section">
+<section id="about" class="section">
 
 
     <div class="section-label">
@@ -369,9 +314,7 @@
         <h2>
 
             SEO With
-            <span>
-                Strategy.
-            </span>
+            <span>Strategy</span>
 
         </h2>
 
@@ -393,21 +336,15 @@
 
             <div class="profile-symbol">
 
-                <span>
-                    A
-                </span>
+                <span>A</span>
 
             </div>
 
 
-            <h3>
-                Aditya Sharma
-            </h3>
+            <h3>Aditya Sharma</h3>
 
 
-            <p class="designation">
-                SEO EXECUTIVE
-            </p>
+            <p class="designation">SEO EXECUTIVE</p>
 
 
             <div class="profile-line"></div>
@@ -416,35 +353,18 @@
             <div class="profile-info">
 
                 <div>
-
                     <i class="fa-solid fa-location-dot"></i>
-
-                    <span>
-                        Delhi, India
-                    </span>
-
+                    <span>Delhi, India</span>
                 </div>
 
-
                 <div>
-
                     <i class="fa-solid fa-envelope"></i>
-
-                    <span>
-                        adityasharmaconnect@yahoo.com
-                    </span>
-
+                    <span>adityasharmaconnect@yahoo.com</span>
                 </div>
 
-
                 <div>
-
                     <i class="fa-solid fa-phone"></i>
-
-                    <span>
-                        +91 8882322373
-                    </span>
-
+                    <span>+91 8882322373</span>
                 </div>
 
             </div>
@@ -455,9 +375,7 @@
 
         <div class="about-text">
 
-            <h3>
-                Profile
-            </h3>
+            <h3>Profile</h3>
 
 
             <p>
@@ -497,21 +415,10 @@
 
             <div class="profile-tags">
 
-                <span>
-                    SEO
-                </span>
-
-                <span>
-                    Analytics
-                </span>
-
-                <span>
-                    Strategy
-                </span>
-
-                <span>
-                    Growth
-                </span>
+                <span>SEO</span>
+                <span>Analytics</span>
+                <span>Strategy</span>
+                <span>Growth</span>
 
             </div>
 
@@ -545,9 +452,7 @@
         <h2>
 
             Growing Businesses
-            <span>
-                Through SEO.
-            </span>
+            <span>Through SEO</span>
 
         </h2>
 
@@ -573,8 +478,7 @@
      SKILLS
 ===================================== -->
 
-<section id="skills"
-         class="section">
+<section id="skills" class="section">
 
 
     <div class="section-label">
@@ -591,9 +495,7 @@
         <h2>
 
             My SEO
-            <span>
-                Toolkit.
-            </span>
+            <span>Toolkit</span>
 
         </h2>
 
@@ -616,41 +518,18 @@
         <div class="skill-box">
 
             <div class="skill-icon">
-
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
-
             </div>
 
-            <h3>
-                Core SEO Skills
-            </h3>
+            <h3>Core SEO Skills</h3>
 
             <ul>
-
-                <li>
-                    On-page Optimization
-                </li>
-
-                <li>
-                    Off-page SEO
-                </li>
-
-                <li>
-                    Link Building
-                </li>
-
-                <li>
-                    Keyword Research
-                </li>
-
-                <li>
-                    Competitor Analysis
-                </li>
-
-                <li>
-                    Technical SEO
-                </li>
-
+                <li>On-page Optimization</li>
+                <li>Off-page SEO</li>
+                <li>Link Building</li>
+                <li>Keyword Research</li>
+                <li>Competitor Analysis</li>
+                <li>Technical SEO</li>
             </ul>
 
         </div>
@@ -662,45 +541,19 @@
         <div class="skill-box">
 
             <div class="skill-icon">
-
                 <i class="fa-solid fa-toolbox"></i>
-
             </div>
 
-            <h3>
-                SEO Tools
-            </h3>
+            <h3>SEO Tools</h3>
 
             <ul>
-
-                <li>
-                    Google Analytics
-                </li>
-
-                <li>
-                    Google Search Console
-                </li>
-
-                <li>
-                    SEMrush
-                </li>
-
-                <li>
-                    Moz
-                </li>
-
-                <li>
-                    Ahrefs
-                </li>
-
-                <li>
-                    Yoast SEO
-                </li>
-
-                <li>
-                    WordPress
-                </li>
-
+                <li>Google Analytics</li>
+                <li>Google Search Console</li>
+                <li>SEMrush</li>
+                <li>Moz</li>
+                <li>Ahrefs</li>
+                <li>Yoast SEO</li>
+                <li>WordPress</li>
             </ul>
 
         </div>
@@ -712,33 +565,16 @@
         <div class="skill-box">
 
             <div class="skill-icon">
-
                 <i class="fa-solid fa-users"></i>
-
             </div>
 
-            <h3>
-                Soft Skills
-            </h3>
+            <h3>Soft Skills</h3>
 
             <ul>
-
-                <li>
-                    Teamwork
-                </li>
-
-                <li>
-                    Communication
-                </li>
-
-                <li>
-                    Time Management
-                </li>
-
-                <li>
-                    Creativity
-                </li>
-
+                <li>Teamwork</li>
+                <li>Communication</li>
+                <li>Time Management</li>
+                <li>Creativity</li>
             </ul>
 
         </div>
@@ -752,17 +588,11 @@
     <div class="tool-strip">
 
         <span>Google Analytics</span>
-
         <span>Google Search Console</span>
-
         <span>SEMrush</span>
-
         <span>Moz</span>
-
         <span>Ahrefs</span>
-
         <span>Yoast SEO</span>
-
         <span>WordPress</span>
 
     </div>
@@ -775,8 +605,7 @@
      EXPERIENCE
 ===================================== -->
 
-<section id="experience"
-         class="section">
+<section id="experience" class="section">
 
 
     <div class="section-label">
@@ -793,9 +622,7 @@
         <h2>
 
             Professional
-            <span>
-                Journey.
-            </span>
+            <span>Journey</span>
 
         </h2>
 
@@ -820,9 +647,7 @@
 
                 NOV 2025
 
-                <span>
-                    PRESENT
-                </span>
+                <span>PRESENT</span>
 
             </div>
 
@@ -836,19 +661,13 @@
 
                     <div>
 
-                        <p class="job-label">
-                            SEO EXECUTIVE
-                        </p>
+                        <p class="job-label">SEO EXECUTIVE</p>
 
-                        <h3>
-                            Growth Zone Private Limited
-                        </h3>
+                        <h3>Growth Zone Private Limited</h3>
 
                     </div>
 
-                    <span class="current-badge">
-                        CURRENT
-                    </span>
+                    <span class="current-badge">CURRENT</span>
 
                 </div>
 
@@ -892,21 +711,10 @@
 
                 <div class="experience-tags">
 
-                    <span>
-                        Keyword Research
-                    </span>
-
-                    <span>
-                        Technical SEO
-                    </span>
-
-                    <span>
-                        Link Building
-                    </span>
-
-                    <span>
-                        Analytics
-                    </span>
+                    <span>Keyword Research</span>
+                    <span>Technical SEO</span>
+                    <span>Link Building</span>
+                    <span>Analytics</span>
 
                 </div>
 
@@ -924,9 +732,7 @@
 
                 FEB 2025
 
-                <span>
-                    OCT 2025
-                </span>
+                <span>OCT 2025</span>
 
             </div>
 
@@ -940,13 +746,9 @@
 
                     <div>
 
-                        <p class="job-label">
-                            SEO EXECUTIVE
-                        </p>
+                        <p class="job-label">SEO EXECUTIVE</p>
 
-                        <h3>
-                            Binoco Holidays Pvt Ltd
-                        </h3>
+                        <h3>Binoco Holidays Pvt Ltd</h3>
 
                     </div>
 
@@ -983,21 +785,10 @@
 
                 <div class="experience-tags">
 
-                    <span>
-                        On-Page SEO
-                    </span>
-
-                    <span>
-                        Off-Page SEO
-                    </span>
-
-                    <span>
-                        Backlinks
-                    </span>
-
-                    <span>
-                        Technical SEO
-                    </span>
+                    <span>On-Page SEO</span>
+                    <span>Off-Page SEO</span>
+                    <span>Backlinks</span>
+                    <span>Technical SEO</span>
 
                 </div>
 
@@ -1015,9 +806,7 @@
 
                 OCT 2024
 
-                <span>
-                    JAN 2025
-                </span>
+                <span>JAN 2025</span>
 
             </div>
 
@@ -1031,13 +820,9 @@
 
                     <div>
 
-                        <p class="job-label">
-                            SEO EXECUTIVE
-                        </p>
+                        <p class="job-label">SEO EXECUTIVE</p>
 
-                        <h3>
-                            Oxyrich Infotech Pvt Ltd
-                        </h3>
+                        <h3>Oxyrich Infotech Pvt Ltd</h3>
 
                     </div>
 
@@ -1079,21 +864,10 @@
 
                 <div class="experience-tags">
 
-                    <span>
-                        On-Page SEO
-                    </span>
-
-                    <span>
-                        Site Audits
-                    </span>
-
-                    <span>
-                        Backlinks
-                    </span>
-
-                    <span>
-                        GSC
-                    </span>
+                    <span>On-Page SEO</span>
+                    <span>Site Audits</span>
+                    <span>Backlinks</span>
+                    <span>GSC</span>
 
                 </div>
 
@@ -1112,8 +886,7 @@
      EDUCATION
 ===================================== -->
 
-<section id="education"
-         class="section education-section">
+<section id="education" class="section education-section">
 
 
     <div class="section-label">
@@ -1129,10 +902,8 @@
 
         <h2>
 
-            Education &
-            <span>
-                Certification.
-            </span>
+            Education &amp;
+            <span>Certification</span>
 
         </h2>
 
@@ -1145,25 +916,14 @@
         <div class="education-card">
 
             <div class="edu-icon">
-
                 <i class="fa-solid fa-graduation-cap"></i>
-
             </div>
 
+            <span class="edu-year">2020 — 2022</span>
 
-            <span class="edu-year">
-                2020 — 2022
-            </span>
+            <h3>Bachelor of Commerce</h3>
 
-
-            <h3>
-                Bachelor of Commerce
-            </h3>
-
-
-            <p>
-                Delhi University
-            </p>
+            <p>Delhi University</p>
 
         </div>
 
@@ -1172,25 +932,14 @@
         <div class="education-card">
 
             <div class="edu-icon">
-
                 <i class="fa-solid fa-school"></i>
-
             </div>
 
+            <span class="edu-year">2017 — 2019</span>
 
-            <span class="edu-year">
-                2017 — 2019
-            </span>
+            <h3>10th — 12th</h3>
 
-
-            <h3>
-                10th — 12th
-            </h3>
-
-
-            <p>
-                Central Board Secondary Education
-            </p>
+            <p>Central Board Secondary Education</p>
 
         </div>
 
@@ -1199,25 +948,14 @@
         <div class="education-card certificate">
 
             <div class="edu-icon">
-
                 <i class="fa-solid fa-certificate"></i>
-
             </div>
 
+            <span class="edu-year">CERTIFICATION</span>
 
-            <span class="edu-year">
-                CERTIFICATION
-            </span>
+            <h3>Digital Marketing Course</h3>
 
-
-            <h3>
-                Digital Marketing Course
-            </h3>
-
-
-            <p>
-                Udemy
-            </p>
+            <p>Udemy</p>
 
         </div>
 
@@ -1228,23 +966,17 @@
 
     <div class="languages">
 
-        <h3>
-            Languages
-        </h3>
+        <h3>Languages</h3>
 
 
         <div class="language-list">
 
             <div>
 
-                <span>
-                    English
-                </span>
+                <span>English</span>
 
                 <div class="language-bar">
-
                     <span style="width: 85%;"></span>
-
                 </div>
 
             </div>
@@ -1252,14 +984,10 @@
 
             <div>
 
-                <span>
-                    Hindi
-                </span>
+                <span>Hindi</span>
 
                 <div class="language-bar">
-
                     <span style="width: 100%;"></span>
-
                 </div>
 
             </div>
@@ -1276,8 +1004,7 @@
      CONTACT
 ===================================== -->
 
-<section id="contact"
-         class="contact-section">
+<section id="contact" class="contact-section">
 
 
     <div class="contact-inner">
@@ -1295,9 +1022,7 @@
         <h2>
 
             Let's Build
-            <span>
-                Organic Growth.
-            </span>
+            <span>Organic Growth</span>
 
         </h2>
 
@@ -1313,41 +1038,25 @@
         <div class="contact-grid">
 
 
-            <a href="tel:+918882322373"
-               class="contact-card">
+            <a href="tel:+918882322373" class="contact-card">
 
                 <i class="fa-solid fa-phone"></i>
 
                 <div>
-
-                    <small>
-                        PHONE
-                    </small>
-
-                    <strong>
-                        +91 8882322373
-                    </strong>
-
+                    <small>PHONE</small>
+                    <strong>+91 8882322373</strong>
                 </div>
 
             </a>
 
 
-            <a href="mailto:adityasharmaconnect@yahoo.com"
-               class="contact-card">
+            <a href="mailto:adityasharmaconnect@yahoo.com" class="contact-card">
 
                 <i class="fa-solid fa-envelope"></i>
 
                 <div>
-
-                    <small>
-                        EMAIL
-                    </small>
-
-                    <strong>
-                        adityasharmaconnect@yahoo.com
-                    </strong>
-
+                    <small>EMAIL</small>
+                    <strong>adityasharmaconnect@yahoo.com</strong>
                 </div>
 
             </a>
@@ -1358,36 +1067,26 @@
                 <i class="fa-solid fa-location-dot"></i>
 
                 <div>
-
-                    <small>
-                        LOCATION
-                    </small>
-
+                    <small>LOCATION</small>
                     <strong>
                         Ram Nagar, Shahdara,
                         Delhi - 110032
                     </strong>
-
                 </div>
 
             </div>
 
 
-            <a href="#"
+            <a href="https://www.linkedin.com/in/aditya-sharma-connect"
+               target="_blank"
+               rel="noopener"
                class="contact-card">
 
                 <i class="fa-brands fa-linkedin-in"></i>
 
                 <div>
-
-                    <small>
-                        LINKEDIN
-                    </small>
-
-                    <strong>
-                        LinkedIn Profile
-                    </strong>
-
+                    <small>LINKEDIN</small>
+                    <strong>LinkedIn Profile</strong>
                 </div>
 
             </a>
@@ -1403,34 +1102,33 @@
 ===================================== -->
 
 <footer>
-    <img src="favicon.png" alt="Logo" class="footer-logo-img">
+
+    <img src="favicon.png" alt="Aditya Sharma Logo" class="footer-logo-img">
+
     <div class="footer-logo">
-        ADITYA <span>SHARMA</span>
+
+        ADITYA
+        <span>SHARMA</span>
+
     </div>
 
-    <p>
-        SEO Executive | Digital Marketing
-    </p>
+
+    <p>SEO Executive | Digital Marketing</p>
 
 
     <div class="footer-line"></div>
 
 
-    <small>
-        © 2026 Aditya Sharma. All Rights Reserved.
-    </small>
+    <small>© 2026 Aditya Sharma. All Rights Reserved.</small>
 
 </footer>
 
 
 
 <!-- THREE.JS -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-
 <!-- JAVASCRIPT -->
-
 <script src="script.js"></script>
 
 
