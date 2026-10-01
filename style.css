@@ -101,6 +101,31 @@ body::before {
     text-align: center;
 }
 
+.loader-logo {
+    display: block;
+
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 20px;
+
+    animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: .85;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
 .loader-circle {
     width: 70px;
     height: 70px;
@@ -174,11 +199,31 @@ body::before {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     font-family: "Space Grotesk";
 
     font-size: 18px;
 
     letter-spacing: 2px;
+
+    line-height: 1;
+}
+
+.logo-img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
 
     line-height: 1;
 }
@@ -1474,6 +1519,17 @@ footer {
     background: #020405;
 }
 
+.footer-logo-img {
+    display: block;
+
+    width: 56px;
+    height: 56px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 14px;
+}
+
 .footer-logo {
     font-family: "Space Grotesk";
 
@@ -1550,6 +1606,11 @@ footer small {
         height: 70px;
 
         padding: 0 5%;
+    }
+
+    .logo-img {
+        width: 34px;
+        height: 34px;
     }
 
     nav {
@@ -1959,7 +2020,8 @@ body::after {
     .core-ring,
     .seo-core,
     .floating-card,
-    .loader-circle {
+    .loader-circle,
+    .loader-logo {
         animation: none !important;
     }
 }
@@ -1969,17 +2031,11 @@ body::after {
    FINAL READABILITY FIX — 3D STRUCTURE STAYS, TEXT IS CLEAR
    ========================================================= */
 
-/* Keep the global 3D universe exactly where it is.
-   We are NOT removing or replacing the globe/rings. */
 #three-canvas {
     opacity: .42 !important;
 }
 
-/* ---------------------------------------------------------
-   EXPERIENCE / TIMELINE
-   The screenshot shows the globe crossing through this text.
-   Give the actual text area a dark glass shield.
-   --------------------------------------------------------- */
+/* EXPERIENCE / TIMELINE */
 
 .experience-item {
     position: relative;
@@ -1990,8 +2046,6 @@ body::after {
     position: relative;
     z-index: 20 !important;
 
-    /* Strong enough to block the 3D lines behind the text,
-       while remaining slightly transparent/glass-like. */
     background:
         linear-gradient(
             90deg,
@@ -2009,7 +2063,6 @@ body::after {
         inset 0 0 35px rgba(255, 255, 255, .012);
 }
 
-/* Make the company/job title bright and crisp */
 .experience-top h3 {
     color: #ffffff !important;
     text-shadow:
@@ -2022,19 +2075,16 @@ body::after {
     text-shadow: 0 0 10px rgba(0, 229, 255, .15);
 }
 
-/* The body copy in the screenshot was too grey */
 .experience-card li {
     color: #b8c0c4 !important;
     text-shadow: 0 2px 7px rgba(0, 0, 0, .95);
 }
 
-/* Make the arrows stand out */
 .experience-card li::before {
     color: #00e5ff !important;
     text-shadow: 0 0 8px rgba(0, 229, 255, .45);
 }
 
-/* Tags need their own small readability layer */
 .experience-tags span {
     color: #00e5ff !important;
     background: rgba(0, 229, 255, .055) !important;
@@ -2042,13 +2092,11 @@ body::after {
     box-shadow: inset 0 0 12px rgba(0, 229, 255, .025);
 }
 
-/* Current badge */
 .current-badge {
     background: rgba(0, 255, 166, .035);
     box-shadow: 0 0 18px rgba(0, 255, 166, .04);
 }
 
-/* Timeline date must also remain readable */
 .timeline-date {
     position: relative;
     z-index: 25;
@@ -2059,11 +2107,7 @@ body::after {
     color: #8b9498 !important;
 }
 
-/* ---------------------------------------------------------
-   OPTIONAL GLOBAL TEXT SHIELD
-   This prevents the fixed 3D canvas from washing out
-   headings/descriptions in other sections too.
-   --------------------------------------------------------- */
+/* GLOBAL TEXT SHIELD */
 
 .section-title h2,
 .section-title p,
@@ -2079,11 +2123,7 @@ body::after {
         0 0 18px rgba(0, 0, 0, .45);
 }
 
-/* ---------------------------------------------------------
-   SKILLS / EDUCATION / ABOUT CARDS
-   Keep the 3D scene visible around them, but not through
-   the important text.
-   --------------------------------------------------------- */
+/* SKILLS / EDUCATION / ABOUT CARDS */
 
 .skill-box,
 .education-card,
@@ -2102,9 +2142,7 @@ body::after {
     text-shadow: 0 2px 8px rgba(0, 0, 0, .9);
 }
 
-/* ---------------------------------------------------------
-   EXTRA-HIGH CONTRAST FOR ALL EXPERIENCE CONTENT
-   --------------------------------------------------------- */
+/* EXTRA-HIGH CONTRAST FOR ALL EXPERIENCE CONTENT */
 
 .experience-card strong,
 .experience-card h3,
@@ -2115,19 +2153,15 @@ body::after {
     z-index: 25;
 }
 
-/* Keep the 3D canvas from receiving accidental interaction */
 #three-canvas {
     pointer-events: none !important;
 }
 
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
+/* MOBILE */
 
 @media (max-width: 750px) {
     .experience-card {
-        background:
-            rgba(3, 5, 7, .94) !important;
+        background: rgba(3, 5, 7, .94) !important;
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
     }
@@ -2137,42 +2171,8 @@ body::after {
     }
 }
 
-/* Small screens: make the readability shield even stronger */
 @media (max-width: 500px) {
     .experience-card {
         background: rgba(3, 5, 7, .96) !important;
     }
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo-img {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    object-fit: contain;
-}
-
-.loader-logo {
-    width: 90px;
-    height: 90px;
-    border-radius: 20px;
-    margin-bottom: 18px;
-    animation: logoPulse 1.5s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-    0%, 100% { transform: scale(1); opacity: 0.85; }
-    50%      { transform: scale(1.08); opacity: 1; }
-}
-
-.footer-logo-img {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    margin-bottom: 12px;
 }
