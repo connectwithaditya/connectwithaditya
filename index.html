@@ -458,6 +458,11 @@
                 View PDF Report
                 <i class="fa-solid fa-file-pdf"></i>
             </a>
+            <button type="button" class="btn-primary lock-btn" style="margin-top:20px;display:inline-flex;gap:10px;align-items:center;border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;"
+                    data-file="files/project-2-data.xlsx" data-title="Local Service Business">
+                Download Excel Sheet
+                <i class="fa-solid fa-file-excel"></i>
+            </button>
         </div>
 
         <!-- PROJECT 2 -->
@@ -476,10 +481,15 @@
                 <span>Link Building</span>
                 <span>Analytics</span>
             </div>
-            <a href="files/project-2-data.xlsx" download class="btn-primary" style="margin-top:20px;display:inline-flex;">
+            <a href="Freelancing Project - Appinventiv.pdf" target="_blank" rel="noopener" class="btn-primary" style="margin-top:20px;display:inline-flex;">
+                View PDF Report
+                <i class="fa-solid fa-file-pdf"></i>
+            </a>
+            <button type="button" class="btn-primary lock-btn" style="margin-top:20px;display:inline-flex;gap:10px;align-items:center;border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;"
+                    data-file="files/project-2-data.xlsx" data-title="Local Service Business">
                 Download Excel Sheet
                 <i class="fa-solid fa-file-excel"></i>
-            </a>
+            </button>
         </div>
 
         <!-- PROJECT 3 -->
@@ -646,6 +656,109 @@
     <div class="footer-line"></div>
     <small>© 2026 Aditya Sharma. All Rights Reserved.</small>
 </footer>
+
+<!-- PASSWORD MODAL -->
+<div class="pw-overlay" id="pw-overlay" aria-hidden="true">
+    <div class="pw-box" id="pw-box" role="dialog" aria-modal="true" aria-labelledby="pw-title">
+        <button type="button" class="pw-close" id="pw-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="pw-icon"><i class="fa-solid fa-lock"></i></div>
+        <h3 id="pw-title">Protected File</h3>
+        <p id="pw-desc">Enter the password to download this file.</p>
+        <div class="pw-field">
+            <input type="password" id="pw-input" placeholder="Enter password" autocomplete="off">
+            <button type="button" class="pw-eye" id="pw-eye" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+        </div>
+        <div class="pw-error" id="pw-error"></div>
+        <button type="button" class="pw-submit" id="pw-submit">Unlock &amp; Download</button>
+        <a class="pw-request" id="pw-request" href="mailto:adityasharmaconnect@yahoo.com?subject=Password%20request%20for%20project%20file">
+            Don't have the password? Request access
+        </a>
+    </div>
+</div>
+
+<script>
+(function () {
+    // SHA-256 of the password. Replace with the hash of YOUR password (see instructions).
+    // Current hash = "Aditya@2026" (demo only, change it).
+    var PASSWORD_HASH = "748ab406e1ae94b69f6abc487b635c9e3290d778859cdca92811cc31a743e26e";
+
+    var overlay = document.getElementById("pw-overlay");
+    var box = document.getElementById("pw-box");
+    var input = document.getElementById("pw-input");
+    var errorEl = document.getElementById("pw-error");
+    var eyeBtn = document.getElementById("pw-eye");
+    var titleEl = document.getElementById("pw-title");
+    var currentFile = "";
+
+    function sha256(text) {
+        var data = new TextEncoder().encode(text);
+        return crypto.subtle.digest("SHA-256", data).then(function (buf) {
+            return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+                return b.toString(16).padStart(2, "0");
+            }).join("");
+        });
+    }
+
+    function openModal(file, title) {
+        currentFile = file;
+        titleEl.textContent = title ? title + " (Protected)" : "Protected File";
+        input.value = "";
+        input.type = "password";
+        eyeBtn.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        errorEl.textContent = "";
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+        setTimeout(function () { input.focus(); }, 50);
+    }
+
+    function closeModal() {
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+    }
+
+    function submit() {
+        if (!input.value) { errorEl.textContent = "Please enter the password."; return; }
+        if (!window.crypto || !crypto.subtle) {
+            errorEl.textContent = "Your browser can't verify passwords here. Use the request link below.";
+            return;
+        }
+        sha256(input.value).then(function (hash) {
+            if (hash === PASSWORD_HASH) {
+                var a = document.createElement("a");
+                a.href = currentFile;
+                a.download = "";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                closeModal();
+            } else {
+                errorEl.textContent = "Incorrect password. Try again.";
+                box.classList.remove("shake");
+                void box.offsetWidth;
+                box.classList.add("shake");
+                input.select();
+            }
+        });
+    }
+
+    document.querySelectorAll(".lock-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            openModal(btn.getAttribute("data-file"), btn.getAttribute("data-title"));
+        });
+    });
+
+    document.getElementById("pw-submit").addEventListener("click", submit);
+    document.getElementById("pw-close").addEventListener("click", closeModal);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) closeModal(); });
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+    eyeBtn.addEventListener("click", function () {
+        var show = input.type === "password";
+        input.type = show ? "text" : "password";
+        eyeBtn.innerHTML = show ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+    });
+})();
+</script>
 
 <!-- THREE.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
