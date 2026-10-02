@@ -23,6 +23,33 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Password modal styles -->
+    <style>
+        .file-btn{margin-top:20px;display:inline-flex;align-items:center;gap:10px}
+        :where(button.lock-btn){border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;letter-spacing:inherit}
+        .pw-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,6,10,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+        .pw-overlay.open{display:flex;animation:pwFade .25s ease}
+        .pw-box{position:relative;width:100%;max-width:420px;padding:36px 30px 30px;text-align:center;background:#060b10;border:1px solid rgba(0,229,255,.35);box-shadow:0 0 40px rgba(0,229,255,.15);color:#e8f1f5}
+        .pw-box.shake{animation:pwShake .4s}
+        .pw-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#8aa0aa;font-size:20px;cursor:pointer}
+        .pw-close:hover{color:#00e5ff}
+        .pw-icon{width:64px;height:64px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#00e5ff;border:1px solid rgba(0,229,255,.4);background:rgba(0,229,255,.06)}
+        .pw-box h3{margin:0 0 8px;font-size:22px}
+        .pw-box p{margin:0 0 20px;font-size:14px;color:#8aa0aa;line-height:1.5}
+        .pw-field{position:relative;margin-bottom:10px}
+        .pw-field input{width:100%;padding:14px 46px 14px 16px;font-size:15px;font-family:inherit;color:#fff;background:rgba(255,255,255,.04);border:1px solid rgba(0,229,255,.25);outline:none;box-sizing:border-box}
+        .pw-field input:focus{border-color:#00e5ff;box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+        .pw-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8aa0aa;padding:10px;cursor:pointer}
+        .pw-eye:hover{color:#00e5ff}
+        .pw-error{min-height:20px;margin-bottom:12px;font-size:13px;color:#ff6b6b}
+        .pw-submit{width:100%;padding:14px;font-size:15px;font-weight:600;font-family:inherit;color:#001014;background:#00e5ff;border:none;cursor:pointer}
+        .pw-submit:hover{filter:brightness(1.1)}
+        .pw-request{display:inline-block;margin-top:18px;font-size:13px;color:#00e5ff;text-decoration:none}
+        .pw-request:hover{text-decoration:underline}
+        @keyframes pwFade{from{opacity:0}to{opacity:1}}
+        @keyframes pwShake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+    </style>
 </head>
 
 <body>
@@ -176,7 +203,7 @@
     <div class="section-title">
         <h2>
             SEO With
-            <span>Strategy</span>
+            <span>Strategy.</span>
         </h2>
         <p>
             My approach combines SEO knowledge,
@@ -231,6 +258,13 @@
             <p>
                 I start every project with research: understanding the audience, the competition and what people actually search for. From there I fix the technical basics first, such as crawl errors, site speed and indexing, then optimize pages and content around search intent and build backlinks through outreach and guest posting. I track results in Google Analytics and Search Console, report them monthly in plain language, and adjust the plan based on what the data shows. Since starting in 2024, I've worked across a travel company, an IT firm and growth-focused teams, and I keep my methods current by following algorithm updates and testing new ideas. I stick to ethical, white-hat practices, because rankings that last matter more than quick wins.
             </p>
+
+            <div class="profile-tags">
+                <span>AI-assisted research</span>
+                <span>AI Overviews &amp; answer engines</span>
+                <span>Schema &amp; FAQs</span>
+                <span>Human-edited content</span>
+            </div>
 
         </div>
 
@@ -431,7 +465,7 @@
     <div class="section-title">
         <h2>
             Selected
-            <span>Work</span>
+            <span>Work.</span>
         </h2>
         <p>Client projects I handled independently, with the results they delivered.</p>
     </div>
@@ -443,25 +477,25 @@
             <div class="skill-icon">
                 <i class="fa-solid fa-store"></i>
             </div>
-            <h3>Technical Website (Appinventiv)</h3>
+            <h3>Technology Base Site Work (Appinventiv)</h3>
             <ul>
                 <li>Audited the site and fixed crawl, indexing and speed issues.</li>
                 <li>Mapped keywords to category and product pages and rewrote titles and meta descriptions.</li>
                 <li><strong>Result:</strong> [add your real result, e.g. organic clicks up X% in Y months]</li>
             </ul>
             <div class="experience-tags">
-                <span>Off-Page SEO</span>
+                <span>Execute off-page SEO</span>
                 <span>Link Building</span>
-                <span>GSC</span>
+                <span>Improve domain authority</span>
             </div>
-            <a href="Appinventiv.pdf" target="_blank" rel="noopener" class="btn-primary" style="margin-top:20px;display:inline-flex;">
+            <a href="files/project-1-report.pdf" target="_blank" rel="noopener" class="btn-primary file-btn">
                 View PDF Report
                 <i class="fa-solid fa-file-pdf"></i>
             </a>
-            <button type="button" class="btn-primary lock-btn" style="margin-top:20px;display:inline-flex;gap:10px;align-items:center;border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;"
+            <button type="button" class="btn-primary file-btn lock-btn"
                     data-file="files/project-2-data.xlsx" data-title="Local Service Business">
-                Download Excel Sheet
-                <i class="fa-solid fa-file-excel"></i>
+                View Excel Data
+                <i class="fa-solid fa-lock"></i>
             </button>
         </div>
 
@@ -470,25 +504,25 @@
             <div class="skill-icon">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
-            <h3>Education Website (Amity University)</h3>
+            <h3>Education Base Site Work (Amity University)</h3>
             <ul>
                 <li>Optimized the Google Business Profile and location pages for local search.</li>
                 <li>Built citations and relevant backlinks through outreach.</li>
                 <li><strong>Result:</strong> [add your real result, e.g. page-1 rankings for X keywords]</li>
             </ul>
             <div class="experience-tags">
-                <span>Off-Page SEO</span>
+                <span>Execute off-page SEO</span>
                 <span>Link Building</span>
-                <span>Analytics</span>
+                <span>Analyze website and competitors</span>
             </div>
-            <a href="Freelancing Project - Appinventiv.pdf" target="_blank" rel="noopener" class="btn-primary" style="margin-top:20px;display:inline-flex;">
+            <a href="files/project-1-report.pdf" target="_blank" rel="noopener" class="btn-primary file-btn">
                 View PDF Report
                 <i class="fa-solid fa-file-pdf"></i>
             </a>
-            <button type="button" class="btn-primary lock-btn" style="margin-top:20px;display:inline-flex;gap:10px;align-items:center;border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;"
+            <button type="button" class="btn-primary file-btn lock-btn"
                     data-file="files/project-2-data.xlsx" data-title="Local Service Business">
-                Download Excel Sheet
-                <i class="fa-solid fa-file-excel"></i>
+                View Excel Data
+                <i class="fa-solid fa-lock"></i>
             </button>
         </div>
 
@@ -497,18 +531,18 @@
             <div class="skill-icon">
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
-            <h3>Blog / Content Website (Client name withheld)</h3>
+            <h3>Blog / Content Website (Wpleague)</h3>
             <ul>
                 <li>Researched topics by search intent and created SEO-friendly content briefs.</li>
                 <li>Improved internal linking and refreshed older posts.</li>
-                <li><strong>Result:</strong> [add your real result, e.g. traffic growth of X%]</li>
+                <li><strong>Result:</strong> [Improve in Rankings]</li>
             </ul>
             <div class="experience-tags">
                 <span>Keyword Research</span>
                 <span>Content SEO</span>
                 <span>SEMrush</span>
             </div>
-            <a href="files/project-3-screenshot.jpg" target="_blank" rel="noopener" class="btn-primary" style="margin-top:20px;display:inline-flex;">
+            <a href="files/project-3-screenshot.jpg" target="_blank" rel="noopener" class="btn-primary file-btn">
                 View Screenshot
                 <i class="fa-solid fa-file-image"></i>
             </a>
@@ -768,4 +802,4 @@
 
 </body>
 
-</html>
+</html>    
