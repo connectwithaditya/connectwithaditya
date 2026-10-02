@@ -26,6 +26,26 @@
 
     <!-- Password modal styles -->
     <style>
+        /* Disable text selection site-wide (password input stays usable) */
+html, body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
         .file-btn{margin-top:20px;display:inline-flex;align-items:center;gap:10px}
         :where(button.lock-btn){border:none;cursor:pointer;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;letter-spacing:inherit}
         .pw-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,6,10,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
