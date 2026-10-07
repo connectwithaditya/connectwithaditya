@@ -28,7 +28,9 @@ main,footer,.navbar{position:relative;z-index:1}
 
 /* ===== LOADER ===== */
 #loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:var(--bg);text-align:center;transition:opacity .6s,visibility .6s}
+#loader{animation:loaderOut .4s ease 4s forwards} /* fallback if JS fails */
 #loader.hide{opacity:0;visibility:hidden}
+@keyframes loaderOut{to{opacity:0;visibility:hidden}}
 #loader img{border-radius:18px;animation:pulse 1.4s ease-in-out infinite}
 #loader p{font:600 14px var(--head);letter-spacing:4px;margin-top:18px}
 @keyframes pulse{50%{transform:scale(1.08)}}
@@ -180,8 +182,11 @@ footer small{display:block;margin-top:18px;color:#6b767b;font-size:12px}
 @keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
 
 /* ===== REVEAL (uses `translate`, so it never fights the tilt transform) ===== */
-.js .reveal{opacity:0;translate:0 24px;transition:opacity .7s ease,translate .7s ease}
+.js .reveal{opacity:0;translate:0 24px;transition:opacity .7s ease,translate .7s ease,transform .18s ease-out,border-color .3s,box-shadow .3s}
 .js .reveal.in{opacity:1;translate:0 0}
+
+/* missing files (set by script.js on a 404) */
+.is-missing{opacity:.5;pointer-events:none;background:#232b30!important;color:var(--muted)!important}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:950px){
@@ -191,8 +196,8 @@ footer small{display:block;margin-top:18px;color:#6b767b;font-size:12px}
 }
 @media(max-width:800px){
   .navbar{height:68px}
-  nav{position:fixed;top:68px;left:0;width:100%;padding:26px;background:rgba(3,5,7,.97);flex-direction:column;transform:translateY(-150%);transition:transform .35s}
-  nav.open{transform:none}
+  nav{position:fixed;top:68px;left:0;width:100%;padding:26px;background:rgba(3,5,7,.97);flex-direction:column;transform:translateY(-150%);visibility:hidden;transition:transform .35s,visibility .35s}
+  nav.open{transform:none;visibility:visible}
   .nav-contact{display:none}
   .menu-button{display:block}
   .hero{flex-direction:column;text-align:center;padding-top:120px}
@@ -212,7 +217,7 @@ footer small{display:block;margin-top:18px;color:#6b767b;font-size:12px}
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *:not(#loader),*::before,*::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;translate:none}
   .bar i{width:var(--w)}
 }
