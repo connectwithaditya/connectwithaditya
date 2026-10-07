@@ -163,6 +163,20 @@
     });
   }
 
+  /* ---------- Disable links to files that return 404 ---------- */
+  document.querySelectorAll("[data-check]").forEach(function (el) {
+    var url = el.getAttribute("href") || el.dataset.file;
+    if (!url) return;
+    fetch(url, { method: "HEAD" }).then(function (r) {
+      if (r.status !== 404) return;
+      el.classList.add("is-missing");
+      el.removeAttribute("href");
+      el.setAttribute("aria-disabled", "true");
+      el.tabIndex = -1;
+      el.innerHTML = 'Coming soon <i class="fa-regular fa-clock"></i>';
+    }).catch(function () { /* offline or file:// preview: leave as is */ });
+  });
+
   /* ---------- Password-gated downloads ----------
      NOTE: this is a client-side gate. It deters casual access only; anyone can
      read the hash and file URL from the source. Don't put truly confidential
